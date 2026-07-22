@@ -16,19 +16,19 @@ spec:
             - key: platform_cluster
               operator: Exists
       - git:
-          repoURL: '{{ .metadata.annotations.platform_repo_url }}'
-          revision: '{{ .metadata.annotations.platform_repo_revision }}'
+          repoURL: '{{ .metadata.annotations.workload_repo_url }}'
+          revision: '{{ .metadata.annotations.workload_repo_revision }}'
           directories:
-          - path: 'namespaces/*/workloads'
+          - path: 'workloads/*'
   template:
     metadata:
       name: 'workloads-{{ index .path.segments 1 }}'
     spec:
       project: default
       source:
-        repoURL: '{{ .metadata.annotations.platform_repo_url }}'
+        repoURL: '{{ .metadata.annotations.workload_repo_url }}'
         path: '{{ .path.path }}'
-        targetRevision: '{{ .metadata.annotations.platform_repo_revision }}'
+        targetRevision: '{{ .metadata.annotations.workload_repo_revision }}'
       destination:
         server: '{{ .server }}'
       syncPolicy:

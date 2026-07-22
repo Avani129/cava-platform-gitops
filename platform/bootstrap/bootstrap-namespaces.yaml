@@ -19,10 +19,10 @@ spec:
           repoURL: '{{ .metadata.annotations.platform_repo_url }}'
           revision: '{{ .metadata.annotations.platform_repo_revision }}'
           directories:
-          - path: 'namespaces/*/config'
+          - path: 'platform/namespaces/*/config'
   template:
     metadata:
-      name: 'namespace-{{ index .path.segments 1 }}'
+      name: 'namespace-{{ index .path.segments 2 }}'
     spec:
       project: default
       source:

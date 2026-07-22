@@ -23,7 +23,7 @@ spec:
       source:
         repoURL: '{{ .metadata.annotations.platform_repo_url }}'
         targetRevision: '{{ .metadata.annotations.platform_repo_revision }}'
-        path: 'config/addons'
+        path: 'platform/config/addons'
       destination:
         namespace: argocd
         server: '{{ .server }}'

@@ -23,7 +23,7 @@ spec:
       source:
         repoURL: '{{ .metadata.annotations.platform_repo_url }}'
         targetRevision: '{{ .metadata.annotations.platform_repo_revision }}'
-        path: 'config/automode/{{ .metadata.labels.environment }}'
+        path: 'platform/config/automode/{{ .metadata.labels.environment }}'
       destination:
         namespace: argocd
         server: '{{ .server }}'

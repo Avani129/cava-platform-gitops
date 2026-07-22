@@ -21,7 +21,7 @@ spec:
       source:
         repoURL: '{{ .metadata.annotations.platform_repo_url }}'
         targetRevision: '{{ .metadata.annotations.platform_repo_revision }}'
-        path: 'config/kro-definitions'
+        path: 'platform/config/kro-definitions'
       destination:
         namespace: argocd
         server: '{{ .server }}'
