@@ -22,7 +22,7 @@ spec:
       project: default
       source:
         repoURL: '{{ .metadata.annotations.platform_repo_url }}'
-        path: 'charts/namespace-config'
+        path: 'platform/charts/namespace-config'
         targetRevision: '{{ .metadata.annotations.platform_repo_revision }}'
         helm:
           releaseName: 'ex-app'
